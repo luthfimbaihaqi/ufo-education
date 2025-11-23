@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import ChartContoh from '@/components/charts/ChartContoh';
 import ChartUKT from '@/components/charts/ChartUKT';
 // Gabungkan semua icon dalam satu baris import
 import { Calendar, ArrowLeft } from 'lucide-react'; 
@@ -19,7 +18,7 @@ async function getInsightData(slug) {
   
   return await compileMDX({
     source: fileContent,
-    components: { ChartContoh, ChartUKT },
+    components: { ChartUKT },
     options: { parseFrontmatter: true }
   });
 }
