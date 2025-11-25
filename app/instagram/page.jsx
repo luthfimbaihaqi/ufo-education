@@ -108,7 +108,7 @@ export default function InstagramGenerator() {
           {/* Insight Box - Sekarang pasti muat! */}
           <div className="bg-blue-50 p-8 rounded-2xl border-l-8 border-blue-500">
             <p className="text-3xl text-blue-800 font-medium text-center leading-snug">
-              "Inggris juara 1 dengan ± Rp 28 Juta/bulan. Tapi hati-hati, biaya hidup di London juga mahal banget! 😅"
+              "Inggris juara 1 dengan ± Rp 28 Juta/bulan. Tapi hati-hati, biaya hidup di London juga setara ginjal! 😅"
             </p>
           </div>
         </div>
