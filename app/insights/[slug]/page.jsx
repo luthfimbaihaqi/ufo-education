@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import ChartUKT from '@/components/charts/ChartUKT';
-// Gabungkan semua icon dalam satu baris import
-import { Calendar, ArrowLeft } from 'lucide-react'; 
+import ChartBeasiswa from '@/components/charts/ChartBeasiswa'; // <--- 1. Import Chart Baru
+import { Calendar, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 // --- FUNGSI AMBIL DATA ---
@@ -18,7 +18,11 @@ async function getInsightData(slug) {
   
   return await compileMDX({
     source: fileContent,
-    components: { ChartUKT },
+    // 2. Masukkan ChartBeasiswa ke dalam daftar components
+    components: { 
+      ChartUKT, 
+      ChartBeasiswa 
+    },
     options: { parseFrontmatter: true }
   });
 }
@@ -48,7 +52,7 @@ export default async function InsightPage({ params }) {
   return (
     <article className="max-w-3xl mx-auto pt-8 pb-24 px-6">
       
-      {/* 1. TOMBOL KEMBALI */}
+      {/* Tombol Kembali */}
       <Link 
         href="/insights" 
         className="inline-flex items-center text-sm text-gray-500 hover:text-green-600 mb-8 transition-colors"
@@ -57,7 +61,7 @@ export default async function InsightPage({ params }) {
         Kembali ke Daftar Insight
       </Link>
 
-      {/* 2. HEADER ARTIKEL (JUDUL & GAMBAR) */}
+      {/* Header Artikel */}
       <header className="mb-10 text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-bold mb-4">
           <Calendar className="w-3 h-3" />
@@ -68,7 +72,6 @@ export default async function InsightPage({ params }) {
           {frontmatter.title}
         </h1>
 
-        {/* Gambar Cover Besar */}
         {frontmatter.image && (
           <div className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-lg mb-8">
             <img 
@@ -80,7 +83,7 @@ export default async function InsightPage({ params }) {
         )}
       </header>
       
-      {/* 3. ISI KONTEN ARTIKEL */}
+      {/* Isi Artikel */}
       <div className="prose prose-lg prose-green max-w-none mx-auto">
         {content}
       </div>
