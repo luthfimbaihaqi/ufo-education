@@ -34,7 +34,7 @@ export default function ChartBeasiswa() {
 
   if (!isMounted) {
     return (
-      <div className="w-full h-[500px] p-4 bg-gray-100 rounded-lg animate-pulse flex items-center justify-center mb-24">
+      <div className="w-full h-[500px] p-4 bg-gray-100 rounded-lg animate-pulse flex items-center justify-center mb-32">
         <span className="text-gray-400">Memuat Data Beasiswa...</span>
       </div>
     );
@@ -44,7 +44,7 @@ export default function ChartBeasiswa() {
     // PERBAIKAN:
     // 1. h-[500px]: Tinggi ditambah sedikit biar bar lebih tebal/jelas
     // 2. mb-24: Margin bawah diperbesar (sekitar 96px) biar tidak mepet teks artikel
-    <div className="w-full h-[500px] p-4 bg-white rounded-lg shadow-sm border border-gray-100 mt-8 mb-24">
+    <div className="w-full h-[500px] p-4 bg-white rounded-lg shadow-sm border border-gray-100 mt-8 mb-48">
       <h3 className="text-center font-bold text-gray-800 mb-2">Adu Tajir: Uang Saku Beasiswa (Estimasi)</h3>
       <p className="text-center text-xs text-gray-400 mb-6">Konversi ke Rupiah (2025)</p>
       
